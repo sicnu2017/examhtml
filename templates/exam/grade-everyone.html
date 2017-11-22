@@ -1,0 +1,66 @@
+<body>
+<div class="form-group">
+    <div class="input-group col-xs-12">
+        <div class="input-group-btn">
+            <select name="type" class="form-control" style="width: auto;">
+                <option value="1">班级</option>
+                <option value="2">姓名</option>
+            </select>
+        </div>
+        <input type="text" name="keyword" id="keyword" class="form-control" placeholder="请您输入班级/姓名">
+        <span class="input-group-btn">
+            <button class="btn btn-success" id="search_submit" type="submit">Go</button>
+        </span>
+    </div>
+    <div id="dleft">
+        <div class="btn-group">
+            <a href="grade-count"  id="returnGrade"><button type="button" class="btn btn-info">返回</button></a></div>
+        <div class="btn-group"><button type="button" class="btn btn-info">最高分</button></div>
+        <div class="btn-group">  <button type="button" class="btn btn-info">最低分</button></div>
+        <div class="btn-group">    <a href="grade-count-index"  id="turnGrade"><button type="button" class="btn btn-info">总体成绩分布</button></a</div>
+    </div>
+</div>
+<br>
+<hr>
+<br>
+<div id="show_content">
+    <div id="item_tittle">
+        <div class="row">
+            <div class="col-md-2">姓名</div>
+            <div class="col-md-2">学号</div>
+            <div class="col-md-2">班级</div>
+            <div class="col-md-2">成绩</div>
+            <div class="col-md-2">总排名</div>
+            <div class="col-md-2">班级排名</div>
+        </div>
+    </div>
+    <div id="item_content">
+        <div class="row item">
+            <div class="col-md-2">张三</div>
+            <div class="col-md-2">2017100101</div>
+            <div class="col-md-2">1班</div>
+            <div class="col-md-2">86</div>
+            <div class="col-md-2">20</div>
+            <div class="col-md-2">10</div>
+        </div>
+        <div class="row item">
+            <div class="col-md-2">李四</div>
+            <div class="col-md-2">2017110201</div>
+            <div class="col-md-2">2班</div>
+            <div class="col-md-2">92</div>
+            <div class="col-md-2">10</div>
+            <div class="col-md-2">11</div>
+        </div>
+        <div class="row item">
+            <div class="col-md-2">王五</div>
+            <div class="col-md-2">2017110301</div>
+            <div class="col-md-2">3班</div>
+            <div class="col-md-2">60</div>
+            <div class="col-md-2">30</div>
+            <div class="col-md-2">21</div>
+        </div>
+    </div>
+</div>
+
+</body>
+
