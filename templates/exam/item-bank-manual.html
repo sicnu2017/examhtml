@@ -1,1 +1,106 @@
-<h1>this is auto add test</h1>
+<body>
+  <div id="nav_btn">
+      <h4 id="typeLbl">试题类型：</h4>
+      <form role="form" id="quesType">
+          <div class="form-group">
+              <select class="form-control">
+                  <option>单选题</option>
+                  <option>多选题</option>
+                  <option>判断题</option>
+                  <option>填空题</option>
+                  <option>分析题</option>
+              </select>
+          </div>
+      </form>
+      <h4 id="degreeLbl">试题难度：</h4>
+      <form role="form" id="quesDegree">
+          <div class="form-group">
+              <select class="form-control">
+                  <option>简单</option>
+                  <option>中等</option>
+                  <option>困难</option>
+              </select>
+          </div>
+      </form>
+  </div>
+  <div id="content_block">
+      <div class="tittle">
+          <span class="tip">题干</span>
+          <span class="intro">在这里填写题目描述</span>
+      </div>
+      <div id="tittle_block">
+          <textarea class="form-control" rows="10" id="quesContent" onfocus="$('#quesContent').val('');"></textarea>
+      </div>
+      <div id="answer_block">
+          <!--单选题-->
+          <div class="keyRadio">
+              <div class="tittle">
+                  <span class="tip">选项</span>
+                  <span class="intro">单选题的选项范围在2到4</span>
+              </div>
+              <div class="keyList">
+                <div class="keyLeft">
+                    <input type="radio" class="radioOrCheck" name="keyChk">
+                </div>
+                  <div class="keyRight">
+                      <input type="text" class="form-control input-sm">
+                  </div>
+              </div>
+              <div class="keyList">
+                  <div class="keyLeft">
+                      <input type="radio" class="radioOrCheck" name="keyChk">
+                  </div>
+                  <div class="keyRight">
+                      <input type="text" class="form-control input-sm">
+                  </div>
+              </div>
+              <div class="keyList">
+                  <div class="keyLeft">
+                      <input type="radio" class="radioOrCheck" name="keyChk">
+                  </div>
+                  <div class="keyRight">
+                      <input type="text" class="form-control input-sm">
+                  </div>
+              </div>
+
+
+          </div>
+
+
+     </div>
+
+
+  <!--wangEditor特效-->
+  <script type="text/javascript" src="../../static/exam/js/wangEditor/dist/js/wangEditor.min.js"></script>
+
+  <script type="text/javascript">
+  /*初始化富文本编辑器*/
+  var editor = new wangEditor("quesContent");
+   editor.config.menus = [
+        'bold',
+        'underline',
+        'italic',
+        'strikethrough',
+        'eraser',
+        'forecolor',
+        'bgcolor',
+        'quote',
+        'fontfamily',
+        'fontsize',
+        'head',
+        'unorderlist',
+        'orderlist',
+        'alignleft',
+        'aligncenter',
+        'alignright',
+        'image',  // 插入图片
+        'table',  // 表格
+        'code',  // 插入代码
+   ];
+
+
+  editor.create();
+
+  // 初始化编辑器的内容
+  editor.$txt.html("<p>请输入题目内容~</p>");
+  </script>
