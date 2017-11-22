@@ -23,7 +23,7 @@ var teacherNav=[
 
 var userRole="teacher";
 //    console.log("userRole:"+ userRole);
-    if(userRole=="t"){
+    if(userRole=="teacher"){
         loadNav(teacherNav);
     }else{
         loadNav(studentNav);
