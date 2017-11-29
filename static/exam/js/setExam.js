@@ -80,9 +80,10 @@ $(document).on("change","#quesType",function(){
     var quesType=$(this).val();
     switch (quesType){
         case "选择题":
-           // console.log("----------");
-            $("#selectionDiv").css({display:"block"});
+            console.log("----------");
             $("#judgeDiv").css({display:"none"});
+            $("#selectionDiv").css({display:"block"});
+            break;
         case "填空题":
             $("#selectionDiv").css({display:"none"});
             $("#judgeDiv").css({display:"none"});
