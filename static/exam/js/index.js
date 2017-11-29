@@ -3,13 +3,13 @@
  */
 /*学生界面的导航*/
 var studentNav=[
-    {"icon":"kaoshi","content":"考试","link":"exam"},
+    {"icon":"hegebiaozhun","content":"考试","link":"exam"},
     {"icon":"chengjichaxun","content":"成绩查询","link":"grade-search"},
     {"icon":"ICON","content":"个人信息维护","link":"update-info"}];
 
 /*教师界面的导航*/
 var teacherNav=[
-    {"icon":"plus-itembank","content":"试题库","link":"item-bank"},
+    {"icon":"shitiku","content":"试题库","link":"item-bank"},
     {"icon":"jiaoxuebankaoshishezhi","content":"考试设置","link":"setExam"},
     {"icon":"yuejuanmokuai","content":"阅卷","link":"marking"},
     {"icon":"chengjitongji","content":"成绩统计","link":"grade-count"},
@@ -20,6 +20,9 @@ var teacherNav=[
  {"icon":"","content":"考试计划"},
  {"icon":"","content":"基础数据维护"}
  ]*/
+var height=window.innerHeight;
+$("#content").css({"height":height+"px"});
+
 
 var userRole="teacher";
 //    console.log("userRole:"+ userRole);

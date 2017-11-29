@@ -1,0 +1,164 @@
+<div class="outer makePaper">
+    <!--设置题型及分数-->
+    <div>
+        <!--表单信息-->
+        <form class="form-inline clearfix">
+            <div class="form-group">
+                <!--题型-->
+                <div class="input-group">
+                    <span class="input-group-addon bg-primary">题型</span>
+                    <select class="form-control" id="quesType">
+                        <option>选择题</option>
+                        <option>填空题</option>
+                        <option>判断题</option>
+                        <option>简答题</option>
+                        <option>程序设计题</option>
+                    </select>
+                </div>
+                <!--分值-->
+                <div class="input-group">
+                    <span class="input-group-addon bg-primary">分值</span>
+                    <input type="text" class="form-control" id="singleScore" name="completionSingleScore" placeholder="请输入每题分值">
+                </div>
+                <div class="input-group">
+                    <button class="btn btn-primary">从题库导入</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--题目内容-->
+    <div class="quesContent">
+        <div class="selectType quesTitle">
+            <p>题目:</p>
+            <textarea class="form-control" rows="10" id="quesTitle" placeholder="请输入题目内容"></textarea>
+        </div>
+        <!--选择题选项-->
+        <div class="selection clearfix" id="selectionDiv">
+
+            <form class="selectionForm">
+                <div class="container-div">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon bg-primary">选项个数</span>
+                            <input type="number" class="form-control" min="2" max="7" value="4" id="selectNum">
+                        </div>
+                    </div>
+                </div>
+                <div class="selectionsContainer">
+                    <div class="container-div">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="singleSelectRadio" id="aRadio" value="option3" checked> A
+                                </label>
+                            </span>
+                                <input type="text" class="form-control" placeholder="请输入选项内容">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-div">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="singleSelectRadio" id="bRadio" value="option3"> B
+                                </label>
+                            </span>
+                                <input type="text" class="form-control" placeholder="请输入选项内容">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-div">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="singleSelectRadio" id="cRadio" value="option3"> C
+                                </label>
+                            </span>
+                                <input type="text" class="form-control" placeholder="请输入选项内容">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-div">
+                        <div class="form-group">
+                            <div class="input-group">
+                           <span class="input-group-addon bg-primary">
+                               <label class="radio-inline">
+                                   <input type="radio" name="singleSelectRadio" id="dRadio" value="option3"> D
+                               </label>
+                           </span>
+                                <input type="text" class="form-control" placeholder="请输入选项内容">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--判断题选项-->
+        <div class="judgement clearfix" id="judgeDiv">
+            <p>选项:</p>
+            <form class="selectionForm">
+                <div class="container-div">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgeRadio" id="rightRadio" value="true" checked> 正确
+                                </label>
+                            </span>
+                            <input type="text" class="form-control" placeholder="请输入选项内容">
+                        </div>
+                    </div>
+                </div>
+                <div class="container-div">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgeRadio" id="falseRadio" value="false"> 错误
+                                </label>
+                            </span>
+                            <input type="text" class="form-control" placeholder="请输入选项内容">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    /*初始化富文本编辑器*/
+    var editor = new wangEditor("quesTitle");
+    editor.config.menus = [
+        'bold',
+        'underline',
+        'italic',
+        'strikethrough',
+        'eraser',
+        'forecolor',
+        'bgcolor',
+        'quote',
+        'fontfamily',
+        'fontsize',
+        'head',
+        'unorderlist',
+        'orderlist',
+        'alignleft',
+        'aligncenter',
+        'alignright',
+        'image',  // 插入图片
+        'table',  // 表格
+        'code',  // 插入代码
+    ];
+    editor.create();
+
+    // 初始化编辑器的内容
+//    editor.$txt.html("<span style='color:slategray'>请输入题目</span>");
+</script>
