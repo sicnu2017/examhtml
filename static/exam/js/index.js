@@ -26,7 +26,7 @@ $("#content").css({"height":height+"px"});
 
 var userRole="teacher";
 //    console.log("userRole:"+ userRole);
-    if(userRole=="teacher"){
+    if(userRole=="teache"){
         loadNav(teacherNav);
     }else{
         loadNav(studentNav);

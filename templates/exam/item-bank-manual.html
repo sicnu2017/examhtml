@@ -1,27 +1,27 @@
 <body>
   <div id="nav_btn">
       <h4 id="typeLbl">试题类型：</h4>
-      <form role="form" id="quesType">
+      <form class="form-inline clearfix">
           <div class="form-group">
-              <select class="form-control">
-                  <option>单选题</option>
-                  <option>多选题</option>
-                  <option>判断题</option>
+              <select class="form-control" id="quesType">
+                  <option>选择题</option>
                   <option>填空题</option>
-                  <option>分析题</option>
+                  <option>判断题</option>
+                  <option>简答题</option>
+                  <option>程序设计题</option>
               </select>
           </div>
       </form>
-      <h4 id="degreeLbl">试题难度：</h4>
-      <form role="form" id="quesDegree">
-          <div class="form-group">
-              <select class="form-control">
-                  <option>简单</option>
-                  <option>中等</option>
-                  <option>困难</option>
-              </select>
-          </div>
-      </form>
+      <!--<h4 id="degreeLbl">试题难度：</h4>-->
+      <!--<form role="form" id="quesDegree">-->
+          <!--<div class="form-group">-->
+              <!--<select class="form-control">-->
+                  <!--<option>简单</option>-->
+                  <!--<option>中等</option>-->
+                  <!--<option>困难</option>-->
+              <!--</select>-->
+          <!--</div>-->
+      <!--</form>-->
   </div>
   <div id="content_block">
       <div class="tittle">
@@ -32,39 +32,112 @@
           <textarea class="form-control" rows="10" id="quesContent" onfocus="$('#quesContent').val('');"></textarea>
       </div>
       <div id="answer_block">
-          <!--单选题-->
-          <div class="keyRadio">
-              <div class="tittle">
+
+          <!--选择题选项-->
+          <div class="selection clearfix" id="selectionDiv">
+              <div class="ansItem">
                   <span class="tip">选项</span>
-                  <span class="intro">单选题的选项范围在2到4</span>
-              </div>
-              <div class="keyList">
-                <div class="keyLeft">
-                    <input type="radio" class="radioOrCheck" name="keyChk">
-                </div>
-                  <div class="keyRight">
-                      <input type="text" class="form-control input-sm">
-                  </div>
-              </div>
-              <div class="keyList">
-                  <div class="keyLeft">
-                      <input type="radio" class="radioOrCheck" name="keyChk">
-                  </div>
-                  <div class="keyRight">
-                      <input type="text" class="form-control input-sm">
-                  </div>
-              </div>
-              <div class="keyList">
-                  <div class="keyLeft">
-                      <input type="radio" class="radioOrCheck" name="keyChk">
-                  </div>
-                  <div class="keyRight">
-                      <input type="text" class="form-control input-sm">
-                  </div>
+                  <span class="intro">在这里填写选项信息</span>
               </div>
 
-
+              <form class="selectionForm">
+                  <div class="container-div">
+                      <div class="form-group">
+                          <div class="input-group">
+                              <span class="input-group-addon bg-primary">选项个数</span>
+                              <input type="number" class="form-control" min="2" max="7" value="4" id="selectNum">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="selectionsContainer">
+                      <div class="container-div">
+                          <div class="form-group">
+                              <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="singleSelectRadio" id="aRadio" value="option3" checked> A
+                                </label>
+                            </span>
+                                  <input type="text" class="form-control" placeholder="请输入选项内容">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container-div">
+                          <div class="form-group">
+                              <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="singleSelectRadio" id="bRadio" value="option3"> B
+                                </label>
+                            </span>
+                                  <input type="text" class="form-control" placeholder="请输入选项内容">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container-div">
+                          <div class="form-group">
+                              <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="singleSelectRadio" id="cRadio" value="option3"> C
+                                </label>
+                            </span>
+                                  <input type="text" class="form-control" placeholder="请输入选项内容">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container-div">
+                          <div class="form-group">
+                              <div class="input-group">
+                           <span class="input-group-addon bg-primary">
+                               <label class="radio-inline">
+                                   <input type="radio" name="singleSelectRadio" id="dRadio" value="option3"> D
+                               </label>
+                           </span>
+                                  <input type="text" class="form-control" placeholder="请输入选项内容">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </form>
           </div>
+
+          <!--判断题选项-->
+          <div class="judgement clearfix" id="judgeDiv">
+              <div class="ansItem">
+                  <span class="tip">选项</span>
+                  <span class="intro">在这里填写选项信息</span>
+              </div>
+
+              <form class="selectionForm">
+                  <div class="container-div">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgeRadio" id="rightRadio" value="true" checked> 正确
+                                </label>
+                            </span>
+                              <input type="text" class="form-control" placeholder="请输入选项内容">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="container-div">
+                      <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon bg-primary">
+                                <label class="radio-inline">
+                                    <input type="radio" name="judgeRadio" id="falseRadio" value="false"> 错误
+                                </label>
+                            </span>
+                              <input type="text" class="form-control" placeholder="请输入选项内容">
+                          </div>
+                      </div>
+                  </div>
+
+              </form>
+          </div>
+      </div>
 
 
      </div>

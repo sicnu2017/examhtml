@@ -1,41 +1,59 @@
 <body  onload="document.getElementById('inputScore').focus()">
-
-<!--<div style="border: 1px solid #ffffff; width: 800px; height: 800px;margin: 0 auto;"> 页面内容居中显示-->
-
-<div id="marking_sub_show_content">
-    <div id="marking_sub_item_tittle">
-        <div class="row">
-            <div class="col-md-1">题目序号</div>
-            <div class="col-md-4">题目内容</div>
-        </div>
+<div class="panel panel-default" style="margin-top: 20px;">
+    <div class="panel-heading">
+        <label>批阅试卷</label>
+        <a onclick="change(this,1)" class="pull-right">隐藏参考答案</a>
     </div>
-    <div id="marking_sub_item_content">
-        <div class="row marking_sub_item">
-            <div class="col-md-1">17</div>
-            <div class="col-md-4">简述软件工程目标和面临的主要问题。</div>
-        </div>
+    <div class="panel-body">
+        <p>
+            <label>题号：17</label>
+            <br />
+            <label>题目：简述软件工程目标和面临的主要问题</label>
+        </p>
+    </div>
+    <table id="answer_table" class="table table-bordered">
+        <thead>
+        <tr>
+            <th id="std_answer" width="47.5%">参考答案</th>
+            <th id="student_answer" width="47.5%">考生答案</th>
+            <th width="5%">得分</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <label>软件工程是一门工程性的学科，其目标主要是成功地建造一个大型软件系统。包括：付出较低的开发成本；达到要求的软件功能；取得较好的软件性能；开发的软件易于移植；需要较低的维护费用；能按时完成开发任务，及时交付使用；开发的软件可靠性高。 面临的主要问题是：软件费用 软件可靠性 软件维护 软件生产率 软件重用。</label>
+            </td>
+            <td>
+                <label>软件工程是一门工程性的学科，其目标主要是成功地建造一个大型软件系统。包括：付出较低的开发成本；达到要求的软件功能；取得较好的软件性能；开发的软件易于移植；需要较低的维护费用；能按时完成开发任务，及时交付使用；开发的软件可靠性高。 面临的主要问题是：软件费用 软件可靠性 软件维护 软件生产率 软件重用。</label>
+            </td>
+            <td style="text-align:center;vertical-align:middle">
+                <div class="cform-group"><input class="form-control" id="inputScore" type="text" /></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="panel-footer">
+        <button class="btn btn-sm btn-success">上一位</button>
+        <button class="btn btn-sm btn-success pull-right">下一位</button>
     </div>
 </div>
-
-<div id="marking_sub_show_content2">
-    <div id="marking_sub_item_tittle2">
-        <div class="row">
-            <div class="col-md-4">参考答案</div>
-            <div class="col-md-4">考生答案</div>
-            <div class="col-md-2">得分</div>
-        </div>
-    </div>
-    <div id="marking_sub_item_content2">
-        <div class="row marking_sub_item">
-            <div class="col-md-4"><label >软件工程是一门工程性的学科，其目标主要是成功地建造一个大型软件系统。包括：付出较低的开发成本；达到要求的软件功能；取得较好的软件性能；开发的软件易于移植；需要较低的维护费用；能按时完成开发任务，及时交付使用；开发的软件可靠性高。 面临的主要问题是：软件费用 软件可靠性 软件维护 软件生产率 软件重用。</label></div>
-            <div class="col-md-4"><label >软件工程是一门工程性的学科，其目标主要是成功地建造一个大型软件系统。包括：付出较低的开发成本；达到要求的软件功能；取得较好的软件性能；开发的软件易于移植；需要较低的维护费用；能按时完成开发任务，及时交付使用；开发的软件可靠性高。 面临的主要问题是：软件费用 软件可靠性 软件维护 软件生产率 软件重用。</label></div>
-            <div class="col-md-2 item_name"><input type="text" style="width:40px;height:30px;vertical-align:middle;" aria-required="true" tabindex="1" size="15" value="" id="inputScore" name="inputScore" ></div>
-        </div>
-    </div>
-</div>
-
-
-
-<!--</div>-->
-
+<script type="text/javascript">
+    function change(obj, flag) {
+        if (flag == 1) {
+            $("#answer_table").find("th").eq(0).hide()
+            $("#answer_table").find("td").eq(0).hide()
+            $(obj).attr("onclick", "change(this,0)")
+            $("#student_answer").attr("width", "95%")
+            $(obj).text("显示参考答案")
+        }
+        else {
+            $("#answer").find("th").eq(0).show()
+            $("#answer").find("td").eq(0).show()
+            $(obj).attr("onclick", "change(this,1)")
+            $("#student_answer").attr("width", "47.5%")
+            $(obj).text("隐藏参考答案")
+        }
+    }
+</script>
 </body>
